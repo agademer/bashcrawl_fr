@@ -58,7 +58,7 @@ A hit! A palpable hit!  You have slain the beast.
 
 EOF
         cat << EOF > treasure
-#!/bin/bash
+#!/usr/bin/env bash
 if ! grep  --quiet --only-matching crown <<< \$I; then
     cat << eof
 You have found a **crown**!  Add it to your inventory.

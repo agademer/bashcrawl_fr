@@ -56,7 +56,7 @@ evil wizard.
 
 EOF
         cat << EOF > treasure
-#!/bin/bash
+#!/usr/bin/env bash
 if ! grep  --quiet --only-matching emerald <<< \$I; then
     cat << eof
 You have found an *emerald*!  Add it to your inventory.
@@ -71,7 +71,7 @@ fi
 EOF
        chmod +x treasure
        cat << EOF > platinum
-#!/bin/bash
+#!/usr/bin/env bash
 if ! grep  --quiet --only-matching platinum <<< \$I; then
     cat << eof
 You have found a sack full of *platinum* coins!  Add it to

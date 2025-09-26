@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ $USER != "jovyan" ]; then
     echo This script is for configuration of mybinder.org sessions
