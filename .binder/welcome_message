@@ -1,15 +1,15 @@
 =====================
-Welcome to bashcrawl!
+Bienvenue sur bashcrawl !
 =====================
 
-This is a game to teach you the basics of using a POSIX (Linux, BSD,
-UNIX) terminal, like the one where you are reading this message now.
+Ce jeu vous apprendra les bases de l'utilisation d'un terminal POSIX (Linux, BSD,
+UNIX), comme celui sur lequel vous lisez ce message en ce moment.
 
-Your first move is very important.
-Type this into the terminal, and press RETURN:
+Votre première action est très importante.
+Tapez ceci dans le terminal, puis appuyez sur RETOUR :
 
     cat scroll
 
-You are now playing the game.
-May the gods save you.
+Vous êtes maintenant en train de jouer au jeu.
+Que les dieux vous protègent.
 
