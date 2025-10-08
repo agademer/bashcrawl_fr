@@ -21,7 +21,7 @@ random_page () {
     # numbered from 0 through 4.  The operation to choose the
     # current spell will pick a random number, 0 through n - 1.
     # That spell will be displayed.
-    total_spells=6
+    total_spells=7
     curr_spell=$(( ${RANDOM} % ${total_spells} ))
 
     case ${curr_spell} in
@@ -133,7 +133,7 @@ If you run the following command, from the library:
 
 tree -F ..
 
-You should see this:
+You see this:
 
 ..
 ├── library/
@@ -303,6 +303,26 @@ done
 
 All of the above commands achieve the same result, each file
 will be compressed with gzip individually.
+
+EOF
+        ;;
+    6)
+        echo "# A rather plain book with no text of interest." > book
+        cat << EOF
+
+Duplicate an object!
+
+Use the "cp" command to make a copy of a file.
+For example, this command makes an exact copy of "file1"
+and saves it as "file2":
+
+cp file1 file2
+
+To copy an entire directory, use "cp -r":
+
+cp -r dir1 dir2
+
+Test the command by duplicating one of the books in this library.
 
 EOF
         ;;
