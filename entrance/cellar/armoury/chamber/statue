@@ -1,22 +1,22 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
 gameover () {
     cat << EOF > corpse
-You see the corpse of a slain adventurer on the floor of the
-dungeon.  You find the following items on the corpse:
+Vous voyez le cadavre d'un aventurier tué sur le sol du
+donjon.  Vous trouvez les objets suivants sur le cadavre :
 
 $I
 
@@ -36,9 +36,9 @@ EOF
 # and this file has been renamed to 'pieces'
 if [ "$0" = "./pieces" ]; then
     cat << EOF
-You sift through the pieces of a shattered statue.
+Vous passez au crible les morceaux d'une statue brisée.
 
-You find nothing of interest in the statue's remains.
+Vous ne trouvez rien d'intéressant dans les restes de la statue.
 
 EOF
     exit 1
@@ -46,20 +46,20 @@ fi
 
 # start the statue encounter
 cat << EOF
-A rugged statue stands in the corner of the room.
+Une statue amochée se dresse dans un coin de la pièce.
 
 EOF
-printf "Do you approach it? y/n  "
+printf "Vous vous en approchez ? o/n  "
 
 read RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
     cat << EOF
-The statue springs to life, rumbling:
+La statue prend vie en grondant :
 
-WHO DARES INTRUDE UPON THE CHAMBER OF SPIRITS?
+QUI OSE S'INTRODUIRE DANS LA CHAMBRE DES ESPRITS ?
 
-It thrusts a fist at you, hitting you for 5 damage.
+Elle vous frappe d'un coup de poing, vous infligeant 5 points de dégâts.
 
 EOF
 
@@ -68,9 +68,9 @@ EOF
     let "HP=HP-5"
     if [ "$HP" -le 0 ]; then
         cat << EOF
-You have been slain by the statue.
+Vous avez été tué par la statue.
 
-GAME OVER!
+FIN DE LA PARTIE !
 
 EOF
         gameover
@@ -78,15 +78,15 @@ EOF
     fi
 
     perl -pe 's/coins/diamonds/' -i ./treasure
-    printf "Do you have a sword? y/n  "
+    printf "Avez-vous une épée ? o/n  "
     read RESP
-    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
-       if grep  --quiet --only-matching 'sword' <<< $I; then
+    if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
+       if grep  --quiet --only-matching 'épée' <<< $I; then
            cat <<EOF
-You strike the statue and it breaks to pieces!
+Vous frappez la statue et elle se brise en morceaux !
 
-However, you have taken damage.
-Deduct 5 from your HP variable:
+Cependant, vous avez subi des dégâts.
+Déduisez 5 de votre variable HP :
 
 let "HP=HP-5"
 
@@ -94,9 +94,9 @@ EOF
            mv statue pieces
        else
            cat << EOF
-No you don't!  Run!
-You have taken damage from the animated statue.
-Deduct 5 from your HP variable:
+Non, vous n'en avez pas ! Cours !
+Vous avez subi des dégâts infligés par la statue animée.
+Déduis 5 points de ta variable HP :
 
 let "HP=HP-5"
 
@@ -106,9 +106,9 @@ EOF
       fi
     else
         cat <<EOF
-Run!
-You have taken damage from the animated statue.
-Deduct 5 from your HP variable:
+Cours !
+Vous avez subi des dégâts infligés par la statue animée.
+Déduis 5 points de ta variable HP :
 
 let "HP=HP-5"
 
@@ -116,8 +116,8 @@ EOF
    fi
 else
     cat << EOF
-You cautiously avoid the statue, recalling stories of living
-stone lying in wait, deep within haunted catacombs.
+Vous évitez prudemment la statue, vous rappelant les histoires de statues animées
+qui guettent, au fond des catacombes hantées.
 
 EOF
 
@@ -423,10 +423,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Hmm, ça n'a pas marché.
+# N'oubliez pas que lorsque les fichiers se terminent par un *,
+# cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./statue
 

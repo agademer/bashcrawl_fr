@@ -1,54 +1,53 @@
 #!/bin/bash
 #
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+#                    Félicitations !
 #
-#                    Congratulations!
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
 if [[ -e orb1 && -e orb2 && -e orb3 ]]; then
     cat << EOF
-You have freed the goblet's material form.  Add 'goblet' to
-your inventory.
+Vous avez libéré la forme matérielle du gobelet.  Ajoutez 'gobelet' à
+votre inventaire.
 
 EOF
     exit
 else 
     cat << EOF
-You try to grasp the faintly glowing goblet, but it passes
-through your fingers.
+Vous essayez d'attraper le gobelet qui brille faiblement, mais il passe
+à travers vos doigts.
 
 EOF
 
 fi
 
-printf "Are you stuck? Do you need a hint? y/n  "
+printf "Vous êtes bloqué ? Vous avez besoin d'un indice ? o/n  "
 read RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
     cat << EOF
-Try searching opensource.com for hints on how to copy files.
+Essayez de rechercher sur opensource.com des conseils sur la manière de copier des fichiers.
 
 EOF
-    printf "Still stuck? Do you need the answer? y/n  "
+    printf "Vous êtes toujours bloqué ? Avez-vous besoin de la réponse ? o/n  "
     read RESP
 
-    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    if [ "$RESP" = "o" -o "$RESP" = "N" ]; then
         cat << EOF
-The cp command copies one file to another. Run these
-commands:
+Vous êtes toujours bloqué ? Vous avez besoin de la commande cp pour copier un fichier vers un autre. Exécutez ces
+commandes :
 
 cp orb1 orb2
 cp orb1 orb3
 
-And then run this goblet script again for confirmation.
+Puis relancez le script goblet pour confirmation. 
 
 EOF
     fi
@@ -327,10 +326,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# Hmm, ça n'a pas marché.
+# N'oubliez pas que lorsque les fichiers se terminent par un * 
+#, cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./goblet
 

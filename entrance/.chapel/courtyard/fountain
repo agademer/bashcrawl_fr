@@ -1,24 +1,24 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 damage() {
     cat << EOF
-You try to resist, but you cannot.  You dip your hand into
-the fountain,  and you feel your skin burning.  The pain
-snaps you out of your trance and you only suffer -2 HP.
+Vous essayez de résister, mais vous n'y parvenez pas.  Vous plongez votre main dans
+la fontaine  et vous sentez votre peau brûler.  La douleur
+vous tire de votre transe et vous ne subissez que -2 PV.
 
-Remember to deduct 2 points from your HP variable:
+N'oubliez pas de déduire 2 points de votre variable PV :
 
 let "HP=HP-2"
 
@@ -28,19 +28,19 @@ EOF
 
 CURSE=`find .. -type f -name ".curse"`
 
-printf "Do you want to approach the fountain? y/n  "
+printf "Voulez-vous vous approcher de la fontaine ? o/n  "
 read RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
     cat << EOF
-The waters sparkle in the light of your gaze.  You feel
-drawn to it.
+Les eaux scintillent à la lumière de votre regard.  Vous vous sentez
+attiré par elles.
 
 EOF
     if [ x$CURSE = "x" ]; then
         cat << EOF
-But you suddenly feel strength to turn away.  You hear a
-sigh from the altar in the chapel.
+Mais vous vous sentez soudain la force de détourner le regard.  Vous entendez un
+soupir provenant de l'autel de la chapelle.
 
 EOF
    else
@@ -459,4 +459,4 @@ fi
 #
 
 #
-# Well that didn't work!
+# Eh bien, ça n'a pas marché !

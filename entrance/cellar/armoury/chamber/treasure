@@ -1,35 +1,36 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
+
 echo
-if ! grep  --quiet --only-matching coins <<< $I; then
+if ! grep  --quiet --only-matching pièces <<< $I; then
     cat << EOF
-You have found a stash of **coins**!  They are old and worn
-with age,  but they still gleam in the magickal light
-emanating from your eyes.
+Vous avez trouvé une cachette remplie de **pièces** !  Elles sont vieilles et usées
+par le temps,  mais elles brillent toujours de la lumière magique
+qui émane de vos yeux.
 
-Prefix this item to your inventory:
+Ajoutez cet objet à votre inventaire :
 
-export I=coins,\$I
+export I=pièces,\$I
 
-Remember, you can check your inventory:
+N'oubliez pas que vous pouvez vérifier votre inventaire :
 
 echo \$I
 
 EOF
 else
-    echo "This treasure has already been taken."
+    echo "Ce trésor a déjà été pris."
     echo
 fi
 
@@ -360,10 +361,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Hmm, ça n'a pas marché.
+# N'oubliez pas que lorsque les fichiers se terminent par un *,
+# cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./treasure
 

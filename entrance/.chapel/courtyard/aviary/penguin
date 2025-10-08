@@ -1,23 +1,23 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
 
 gameover () {
     cat << EOF > corpse
-You see the corpse of a slain adventurer on the floor of the
-dungeon.  You find the following items on the corpse:
+Vous voyez le cadavre d'un aventurier tué sur le sol du
+donjon.  Vous trouvez les objets suivants sur le cadavre :
 
 ${I}
 
@@ -35,81 +35,80 @@ EOF
 
 penguin_bite () {
     cat << EOF
-The penguin gnaws at your Bag of Holding, hoping for a
-morsel.  Finding nothing, it takes a nip at your hand for 1
-point of damage. (let "HP=HP-1").  You may avoid this damage
-if you have a sword and wish to attack the penguin.
+Le pingouin ronge votre sac de transport, dans l'espoir d'y trouver quelque chose à manger.
+Ne trouvant rien, il vous mord la main, vous infligeant 1 point de dégâts (let "HP=HP-1"). 
+Vous pouvez éviter ces dégâts si vous avez une épée et que vous souhaitez attaquer le pingouin.
 
 EOF
-printf "Do you want to attack the penguin? y/n  "
+printf "Voulez-vous attaquer le pingouin ? o/n  "
 	read RESP
-	if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+	if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
         cat << EOF
-You attack the penguin, quickly doing away with it with one
-quick slash.  This draws the attention of the other penguins
-in the room.  They band together and rush at you. You fight
-your best.
+Vous attaquez le pingouin et le terrez rapidement d'un
+coup rapide. Cela attire l'attention des autres pingouins
+présents dans la pièce. Ils se regroupent et se précipitent sur vous. Vous vous battez
+de toutes vos forces.
 
 EOF
         let HP=HP-5
         export HP
         if [ "$HP" -le 0 ]; then
             cat << EOF
-The mob of penguins reduces your hit points to zero.  You
-are slain by the mob.
+La meute de pingouins réduit vos points de vie à zéro.  Vous
+êtes tué par la meute.
 
 EOF
             gameover
             exit 1
         else
             cat << EOF
-But a mob of penguins does not tolerate oppression, and you
-soon find yourself sealed in a block of ice.  You stay,
-perfectly preserved for 128 years. When you are thawed, you
-may continue your adventure.
+Mais une foule de pingouins ne tolère pas l'oppression, et vous
+vous retrouvez rapidement emprisonné dans un bloc de glace.  Vous y restez,
+parfaitement conservé pendant 128 ans. Une fois dégelé, vous
+pouvez poursuivre votre aventure.
 
 EOF
         fi
 	else
         let HP=HP--
         export HP
-	    echo "You keep things in perspective, and do not lash out at the penguin."
+	    echo "Vous gardez la tête froide et ne vous en prenez pas au pingouin."
 	fi
 }
 
 cat << EOF
-One of the birds finally notices your presence.  It turns
-its head sideways, seemingly beckoning for you to come
-closer.
+L'un des oiseaux finit par remarquer votre présence.  Il tourne
+la tête sur le côté, comme pour vous inviter à vous
+approcher.
 
 EOF
-printf "Do you get closer? y/n  "
+printf "Vous vous rapprochez ? o/n  "
 read RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
     cat << EOF
-You take a step forward, and the bird rushes toward you, its
-mouth open wide.
+Vous faites un pas en avant, et l'oiseau se précipite vers vous, la
+gueule grande ouverte.
 
 EOF
-    printf "Do you happen to have a fish? y/n  "
+    printf "Avez-vous un poisson ? o/n  "
     read RESP
 
-    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
-        if grep  --quiet --only-matching fish <<< $I; then
+    if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
+        if grep  --quiet --only-matching poisson <<< $I; then
             cat << EOF
 
-You toss the fish at the penguin,  which catches the fish
-mid-air and gobbles it down.
+Vous lancez le poisson au pingouin,  qui l'attrape
+en plein vol et l'avale goulûment.
 
-Don't forget to remove the fish from your inventory.  Try
-the following command:
+N'oubliez pas de retirer le poisson de votre inventaire.  Essayez
+la commande suivante :
 
-export I=\$(sed "s/fish//; s/,,/,/" <<< \$I)
+export I=\$(sed "s/poisson//; s/,,/,/" <<< \$I)
 
 EOF
         else
-            echo "You don't have a fish!"
+            echo "Vous n'avez pas de poisson !"
             echo
             penguin_bite
         fi
@@ -118,8 +117,8 @@ EOF
    fi
 else
     cat << EOF
-You back away from the penguin carefully.  It loses interest
-in you and waddles away.
+Vous vous éloignez prudemment du pingouin.  Il se désintéresse
+de vous et s'éloigne en se dandinant.
 
 EOF
 
@@ -530,4 +529,4 @@ fi
 #
 
 #
-# Well that didn't work!
+# Eh bien, ça n'a pas marché !

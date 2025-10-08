@@ -1,33 +1,33 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
-# 
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
+#
 
-ITEM=crystal
+ITEM=cristal
 
 if ! [ -f .bless ] ; then
-    printf "Do you have an ice crystal? y/n  "
+    printf "Avez-vous un cristal de glace ? o/n  "
     read RESP
 
-    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
         if grep  --quiet --only-matching "$ITEM" <<< "$I" ; then
             cat << EOF
-You place the ice crystal among the shards of glass.  The
-sword in your hands becomes cold.  You feel the power of
-1000 blizzards coursing through it.
+Vous placez le cristal de glace parmi les éclats de verre.  
+L'épée dans vos mains devient froide.  Vous sentez la puissance de
+1000 blizzards la traverser.
 
-Don't forget to remove the crystal from your inventory.  Try
-the following command:
+N'oubliez pas de retirer le cristal de votre inventaire.  Essayez
+la commande suivante :
 
 export I=\$(sed 's/$ITEM,//' <<< \$I)
 EOF
@@ -35,22 +35,22 @@ EOF
             exit 0
         else
             cat << EOF
-You search in your inventory but find nothing that seems like
-a crystal
+Vous fouillez dans votre inventaire, mais vous ne trouvez rien qui ressemble à
+un cristal.
 
 EOF
         fi
     fi
     cat << EOF
-You sense that the glass shards are searching for something.
-Whatever it is, you cannot provide it now.
+Vous sentez que les éclats de verre cherchent quelque chose.
+Quoi que ce soit, vous ne pouvez pas le leur donner pour l'instant.
 
-Walk with care.
+Marchez prudemment.
 
 EOF
 else
     cat << EOF
-You already placed the ice crystal among the shards of glass
+Vous avez déjà placé le cristal de glace parmi les éclats de verre.
 
 EOF
 fi
@@ -328,11 +328,11 @@ fi
 
 
 
-# Hmm, that didn't work.
+# Hmm, ça n'a pas marché.
 
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# N'oubliez pas que lorsque les fichiers se terminent par un * 
+#, cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./glass
 

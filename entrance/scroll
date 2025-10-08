@@ -1,17 +1,17 @@
 
-It is pitch black in these catacombs.
-You have a magickal spell that lists all items in a room.
+Il fait nuit noire dans ces catacombes.
+Vous disposez d'un sortilège qui répertorie tous les objets présents dans une pièce.
 
-To see in the dark, type:     ls
-To move around, type:         cd <directory>
+Pour voir dans le noir, tapez :     ls
+Pour vous déplacer, tapez :         cd <directory>
 
-Try looking around this room.
-Then move into one of the next rooms.
+Essaie de regarder autour de toi dans cette pièce.
+Puis passe dans l'une des pièces suivantes.
 
 EXAMPLE:
 
 $ ls
 $ cd cellar
 
-Remember to cast ``ls`` when you get into the next room!
+N'oubliez pas de lancer  ``ls``  lorsque vous entrez dans la pièce suivante !
 

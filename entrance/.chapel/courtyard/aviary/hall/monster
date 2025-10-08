@@ -1,21 +1,21 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 gameover () {
     cat << EOF > corpse
-You see the corpse of a slain adventurer on the floor of the
-dungeon.  You find the following items on the corpse:
+Vous voyez le cadavre d'un aventurier tué sur le sol du
+donjon.  Vous trouvez les objets suivants sur le cadavre :
 
 ${I}
 
@@ -31,7 +31,7 @@ EOF
     $SHELL
 }
 roll() {
-    printf "Enter a number:  "
+    printf "Entrez un nombre:  "
     read NUM
     ALPHA=$RANDOM
     OMEGA=$RANDOM
@@ -41,24 +41,24 @@ roll() {
     MONSTER=$RANDOM
     MONSTER=`echo $MONSTER | cut -b 1-2`
     NUM=`echo $NUM | cut -b 1-2`
-    echo "The monster rolled " $MONSTER
-    echo "You rolled " $NUM
+    echo "Le monstre a lancé " $MONSTER
+    echo "Vous avez lancé " $NUM
     resolve
 }
 
 resolve() {
-    if ! grep  --quiet --only-matching 'sword' <<< $I; then
+    if ! grep  --quiet --only-matching 'épée' <<< $I; then
         cat << EOF
-You do not have a sword!
+Vous n'avez pas d'épée !
 
-Your attacks will be less effective.
+Vos attaques seront moins efficaces.
 
 EOF
         let NUM=NUM-10
     fi
     if [[ $MONSTER -eq $NUM ]]; then
         cat << EOF
-You each parry one another's attacks.  Roll again...
+Vous parez mutuellement vos attaques.  Relancez les dés...
 
 EOF
 	roll
@@ -66,19 +66,19 @@ EOF
 
     if [[ $MONSTER -lt $NUM ]]; then
         cat << EOF
-A hit! A palpable hit!  You have slain the beast.
+Touché ! Un coup critique !  Vous avez terrassé la bête.
 
 EOF
         cat << EOF > treasure
 #!/bin/bash
-if ! grep  --quiet --only-matching crown <<< \$I; then
+if ! grep  --quiet --only-matching couronne <<< \$I; then
     cat << eof
-You have found a **crown**!  Add it to your inventory.
+Vous avez trouvé une **couronne** !  Ajoutez-la à votre inventaire.
 
 eof
 
 else
-    echo "This treasure has already been taken."
+    echo "Ce trésor a déjà été pris."
 fi
 
 EOF
@@ -87,8 +87,8 @@ EOF
     else
         cat << EOF
 
-Your attack is deflected off the monster's leathery flesh.
-You take 5 points damage. Deduct this from your HP.
+Votre attaque est déviée par la peau coriace du monstre.
+Vous subissez 5 points de dégâts. Déduisez-les de vos HP.
 
 let HP=HP-5
 
@@ -97,9 +97,9 @@ EOF
         export HP
         if [ "$HP" -le 0 ]; then
             cat << EOF
-You have been slain by the monster.
+Vous avez été tué par le monstre.
 
-GAME OVER!
+FIN DE LA PARTIE !
 
 EOF
             gameover
@@ -111,30 +111,30 @@ EOF
 
 if [ "$0" = "./carcass" ]; then
     cat << EOF
-You find the carcass of a foul beast.  Nothing of interest
-lies within its remains.
+Vous trouvez la carcasse d'une bête répugnante.  Rien d'intéressant
+ne se trouve parmi ses restes.
 
 EOF
     exit 0
 fi
 
 cat << EOF
-A hulking three-legged beast, with a mouth full of fangs and
-a barbed tail and 8 arms, lumbers toward you.
+Une bête imposante à trois pattes, avec une gueule pleine de crocs,
+une queue barbelée et huit bras, s'avance lourdement vers vous.
 
-If you have a sword, you can attack.  Otherwise, you should
-run.
+Si vous avez une épée, vous pouvez attaquer.  Sinon, vous devriez
+fuir.
 
 EOF
-printf "Do you want to attack? y/n  "
+printf "Voulez-vous attaquer ? o/n  "
 read RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
+if [ "$RESP" = "o" -o "$RESP" = "O" ];then
     roll
 else
     cat << EOF
-You wisely turn and flee.  Quickly cd to the previous
-directory.
+Vous faites preuve de sagesse en faisant demi-tour et en prenant la fuite.  
+Faites rapidement un cd vers le répertoire précédent.
 
 EOF
 fi
@@ -544,4 +544,4 @@ fi
 #
 
 #
-# Well that didn't work!
+# Eh bien, ça n'a pas marché !

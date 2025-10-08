@@ -1,16 +1,16 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
 floors=666
@@ -62,31 +62,31 @@ countup () {
 
 if grep --quiet UP .direction; then
     cat << EOF
-You hear a slight whirring, and feel a heaviness at your
-feet, with a vague, disquieting sense of motion.
+Vous entendez un léger vrombissement et ressentez une lourdeur au niveau des
+pieds, accompagnée d'une vague et inquiétante sensation de mouvement.
 
-A magickal display reads:
+Une inscription magique indique :
 
 EOF
     countup
     cat << EOF
 
-The doors slide open, with nothing but darkness beyond.
+Les portes coulissent pour s'ouvrir, ne laissant apparaître que l'obscurité.
 
 EOF
     echo "DOWN" > .direction
     ln -sf .satellite door && \
         sleep 10 && \
-        echo "The doors slide closed." && \
+        echo "Les portes se ferment en coulissant." && \
         rm door &> /dev/null && \
     echo "DOWN" > .direction &
     echo
 else
     cat << EOF
-You hear a slight whirring, and feel a lightness at your
-feet, with a vague, disquieting sense of motion.
+Vous entendez un léger vrombissement et ressentez une légèreté au niveau de vos
+pieds, accompagnée d'une vague et inquiétante sensation de mouvement.
 
-A magickal display reads:
+Une inscription magique indique :
 
 EOF
     countdown
@@ -94,12 +94,12 @@ EOF
     echo
     echo "UP" > .direction &
     cat << EOF
-The doors slide open, with nothing but darkness beyond.
+Les portes coulissent pour s'ouvrir, ne laissant apparaître que l'obscurité.
 
 EOF
     ln -sf .. door && \
         sleep 10 && \
-        echo "The doors slide closed." && \
+        echo "Les portes se ferment en coulissant." && \
         rm door &> /dev/null &
     echo
 fi
@@ -495,13 +495,13 @@ fi
 #
 #
 #
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# N'oubliez pas que lorsque les fichiers se terminent par un *
+# cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./display
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Si vous ne voyez pas le * après
+# ce nom de fichier, vous avez probablement
+# oublié d'utiliser ls -F
 

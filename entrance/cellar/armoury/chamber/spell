@@ -1,56 +1,56 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
 if ! [ -L portal ]; then
     cat << EOF
-Runes, the language of the ancient mystics that once ruled
-this land, are inscribed upon the western wall.
+Des runes, langage des anciens mystiques qui régnaient autrefois sur
+ces terres, sont gravées sur le mur ouest.
 
 EOF
-    printf "Do you want to read them? y/n  "
+    printf "Voulez-vous les lire ? o/n  "
     read RESP
 
-    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
         cat << EOF
-You recall the lessons of Caitlyn the Green, who taught you
-these ancient letters.
+Vous vous souvenez des leçons de Caitlyn la Verte, qui vous a enseigné
+ces lettres anciennes.
 
-The runes are instructions on how to summon a portal that
-will allow you to walk through an invisible door contained
-in the wall.
+Les runes sont des instructions qui vous permettent d'invoquer un portail qui
+vous permettra de franchir une porte invisible contenue
+dans le mur.
 
-In Bash, a symbolic link (symlink) is a *shortcut* to
-another file or directory.  Create one from this room to the
-adjacent one:
+Dans Bash, un lien symbolique (symlink) est un *raccourci* vers
+un autre fichier ou répertoire.  Créez-en un depuis cette pièce vers la
+pièce adjacente :
 
 ln -fs ../../../chapel/courtyard/aviary/hall portal
 
 EOF
     else
         cat << EOF
-You decide it is probably best to leave magickal
-inscriptions as they are.
+Vous décidez qu'il vaut probablement mieux laisser les inscriptions magiques
+telles quelles.
 
 EOF
     fi
 else
     cat << EOF
-The invoked portal is still there, wide open as it has been
-since its first appearance.
+Le portail invoqué est toujours là, grand ouvert comme il l'était
+lors de sa première apparition.
 
-You can go through it just like any other door :
+Vous pouvez le franchir comme n'importe quelle autre porte :
 
 cd portal
 
@@ -370,10 +370,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Hmm, ça n'a pas marché.
+# N'oubliez pas que lorsque les fichiers se terminent par un *,
+# cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./spell
 

@@ -1,33 +1,33 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 cat << EOF
-A metal box sits upon the ground.  It appears to be
-illuminated from within.  There is a window in the box. The
-window is black, but there is luminescent writing.
+Une boîte métallique repose sur le sol.  Elle semble être
+éclairée de l'intérieur.  Il y a une ouverture dans la boîte. L'ouverture
+est noire, mais elle comporte une inscription luminescente.
 
 EOF
-printf "Do you want to read the writing? y/n  "
+printf "Voulez-vous lire ce qui est écrit ? o/n  "
 read RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
     cat << EOF
 
-.--------------------------------,
-|       Welcome to POSIX         |
-|   Enter your username:         |
-'--------------------------------'
+.------------------------------------,
+|       Bienvenue dans POSIX         |
+|   Entrez votre nom d'utilisateur : |
+'------------------------------------'
 EOF
    read RESP
 
@@ -35,11 +35,11 @@ EOF
        cat << EOF > armour
 #!/bin/bash
 cat << eof
-Welcome, ${USER}, to your POSIX system.  You have learnt much,
-and now you have the basic knowledge you need to become a
-truly powerful wizard.
+Bienvenue, ${USER}, dans votre système POSIX.  Vous avez beaucoup appris,
+et vous disposez désormais des connaissances de base nécessaires pour devenir un
+sorcier vraiment puissant.
 
-You have found magickal armour.  Add it to your inventory.
+Vous avez trouvé une armure magique.  Ajoutez-la à votre inventaire.
 
 eof
 touch .armour
@@ -47,12 +47,12 @@ touch .bless
 
 EOF
         chmod +x armour
-        echo "You feel magic in the air."
+        echo "Vous sentez la magie dans l'air."
    fi
 else
     cat << EOF
-The box is full of mystery, and it's often best not to look
-too deeply into puzzles.
+La boîte est pleine de mystère, et il vaut souvent mieux ne pas chercher
+à trop approfondir les énigmes.
 
 EOF
 fi
@@ -330,15 +330,15 @@ fi
 
 
 
-# Hmm, that didn't work.
+# Hmm, ça n'a pas marché.
 #
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# N'oubliez pas que lorsque les fichiers se terminent par un *
+# cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./box
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Si vous ne voyez pas le * après
+# ce nom de fichier, vous avez probablement
+# oublié d'utiliser ls -F
 

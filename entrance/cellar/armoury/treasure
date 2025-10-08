@@ -1,28 +1,28 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
-ITEM=sword
+ITEM=épée
 
 if ! grep --quiet "$ITEM" <<< "$I" ; then
     cat << EOF
-You have found a gleaming silver **sword**!  You marvel at
-its craftsmanship, and you recall tales from your childhood
-of the great mystic king Rannismir who bore such a sword to
-protect the kingdom from the undead.
+Vous avez trouvé une **épée** en argent étincelante !  Vous admirez
+son travail artisanal et vous vous souvenez des contes de votre enfance
+sur le grand roi mystique Rannismir qui portait une telle épée pour
+protéger le royaume des morts-vivants.
 
-Add this item to your inventory:
+Ajoutez cet objet à votre inventaire :
 
 export I=$ITEM,\$I
 
@@ -35,7 +35,7 @@ EOF
     mv ../../.vault ../../vault 2>/dev/null
     mv ../../.scrap ../../scrap 2>/dev/null
 else
-    echo "This treasure has already been taken."
+    echo "Ce trésor a déjà été pris."
 fi
 
 
@@ -318,7 +318,7 @@ fi
 
 
 
-# Hmm, that didn't work!
+# Hmm, ça n'a pas marché !
 #
-# Maybe the scroll can provide a clue.
+# Peut-être que le parchemin peut fournir un indice.
 

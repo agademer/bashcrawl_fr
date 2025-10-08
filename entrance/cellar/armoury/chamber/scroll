@@ -1,15 +1,15 @@
 
-# You seem to have reached the end of this hall.
+# Vous semblez être arrivé au bout de ce couloir.
 #
-# Turn back and try another path.
+# Faites demi-tour et essayez un autre chemin.
 #
-# Remember, to back track one directory, you type:
+# N'oubliez pas que pour revenir au répertoire précédent, vous devez taper :
 #
 # cd ..
 #
-# If you are drawing a map of your progress,
-# you can always get the name of your working
-# directory with this command:
+# Si vous dessinez une carte de votre progression,
+# vous pouvez toujours obtenir le nom de votre répertoire de travail
+# à l'aide de cette commande :
 #
 # pwd
 

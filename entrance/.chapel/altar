@@ -1,58 +1,58 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
-ITEM=trinket
+ITEM=bijou
 
 function askPutBackOnAltar() {
-    echo "Do you want to put the trinket back on the altar? y/n  "
+    echo "Voulez-vous remettre le bijou sur l'autel ? o/n  "
     read RESP
-    return $([ "$RESP" = "y" -o "$RESP" = "Y" ])
+    return $([ "$RESP" = "o" -o "$RESP" = "O" ])
 }
 
 function askPutInInventory() {
-    echo "Do you want to take the trinket for yourself? y/n  "
+    echo "Voulez-vous garder le bijou pour vous ? o/n  "
     read RESP
-    return $([ "$RESP" = "y" -o "$RESP" = "Y" ])
+    return $([ "$RESP" = "o" -o "$RESP" = "O" ])
 }
 
 function askPutBackOnGround() {
-    echo "Do you want to put the trinket back on the ground ?"
-    echo "y/n  "
+    echo "Voulez-vous remettre le bijou par terre ?"
+    echo "o/n  "
     read RESP
-    return $([ "$RESP" = "y" -o "$RESP" = "Y" ])
+    return $([ "$RESP" = "o" -o "$RESP" = "O" ])
 }
 
 function putOnAltar() {
     cat << EOF
-You place the trinket upon the altar.  You feel a gentle
-breeze pass through the room.
+Vous placez le bijou sur l'autel.  Vous sentez une douce
+brise traverser la pièce.
 
 EOF
     touch .bless
 }
 
 function putInInventory() {
-    echo "Remember to add the trinket to your inventory!"
+    echo "N'oubliez pas d'ajouter le 'bijou' à votre inventaire !"
     echo ""
     touch .curse
 }
 
 function leaveOnGround() {
     cat << EOF
-You leave the trinket where it lies.  There is a great
-sadness here.  You feel compelled to move on.
+Vous laissez le bibelot là où il se trouve.  Il y a une grande
+tristesse ici.  Vous vous sentez obligé de passer votre chemin.
 
 EOF
     touch .curse
@@ -60,14 +60,14 @@ EOF
 
 function remindRemoveInventory() {
     cat << EOF
-Don't forget to remove the trinket from your inventory.  Try
-the following command:
+N'oubliez pas de retirer le bijou de votre inventaire.  Essayez
+la commande suivante :
 
 export I=$(sed "s/$ITEM,//" <<< "$I")
 EOF
 }
 
-echo "In the corner is a decaying old altar of some forgotten god."
+echo "Dans le coin se trouve un vieil autel en ruine dédié à un dieu oublié."
 
 if grep --quiet "$ITEM" <<< "$I" ; then
     if askPutBackOnAltar ; then
@@ -78,7 +78,7 @@ if grep --quiet "$ITEM" <<< "$I" ; then
         leaveOnGround
         remindRemoveInventory
     else
-        echo -e "You keep the trinket in your inventory\n"
+        echo -e "Vous conservez le bijou dans votre inventaire.\n"
     fi
 elif [ -f .bless ]; then
     if askPutInInventory ; then
@@ -88,7 +88,7 @@ elif [ -f .bless ]; then
         leaveOnGround
         rm .bless
     else
-        echo -e "You leave the trinket on the altar\n"
+        echo -e "Vous laissez le bijou sur l'autel.\n"
     fi
 elif [ -f .curse ]; then
     if askPutBackOnAltar ; then
@@ -101,8 +101,7 @@ elif [ -f .curse ]; then
     fi
 else
     cat << EOF
-There is a small trinket on the ground.  It looks religious
-in nature.
+Il y a un petit bijou par terre.  Il semble être de nature religieuse.
 
 EOF
     if askPutBackOnAltar ; then
@@ -383,16 +382,16 @@ fi
 
 
 
-# Hmm, that didn't work.
+# Hmm, ça n'a pas marché.
 #
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# N'oubliez pas que lorsque les fichiers se terminent par un *
+# cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./altar
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Si vous ne voyez pas le * après
+# ce nom de fichier, vous avez probablement
+# oublié d'utiliser ls -F
 
 

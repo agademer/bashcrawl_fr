@@ -1,45 +1,46 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 if [[ -e potion ]]; then
     cat << EOF
-You have summoned a potion from afar.  You drink it quickly
-and feel a surge of strength.
+Vous avez invoqué une potion depuis un autre plan d'existence.  
+Vous la buvez rapidement
+et ressentez un regain d'énergie.
 
-Add 5 HP to your score.
+Ajoutez 5 HP à votre score.
 
 let HP=HP+5
 
 EOF
 else
     cat << EOF
-A page from a druid's tome of incantations lies on the
-ground.  It reveals to you how to summon a healing potion:
+Une page du grimoire d'incantations d'un druide gît sur le
+sol. Elle vous révèle comment invoquer une potion de guérison :
 
-# To find a file on your system, use the find command.  For
-# example, to search this room:
+# Pour trouver un fichier sur votre système, utilisez la commande find. Par
+# exemple, pour effectuer une recherche dans cette pièce :
 
 find . -name "potion"
 
-# Once you've found a potion, copy it to this directory and
-# run this spell script again.
+# Une fois que vous avez trouvé une potion, *copiez-la dans ce répertoire* et
+# relancez ce script de sort.
 
-There are no potions in this room.  But try searching
-starting at the entrance.
+Il n'y a pas de potions dans cette pièce.  Mais essayez de chercher
+en commençant par l'entrée.
 
-Hint: use pwd to determine how many rooms (folders) are
-between you and the entrance.
+Astuce : utilisez pwd pour déterminer combien de pièces (dossiers) se trouvent
+entre vous et l'entrée.
 
 EOF
 
@@ -318,10 +319,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Hmm, ça n'a pas marché.
+# N'oubliez pas que lorsque les fichiers se terminent par un *,
+# cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./spell
 

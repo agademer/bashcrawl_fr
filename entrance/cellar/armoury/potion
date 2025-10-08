@@ -1,50 +1,50 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
 # check if we found that bottle already ...
 if [[ -v HP ]] ; then
   cat <<EOF
-You checked that bottle already. 
+Vous avez déjà vérifié cette bouteille. 
 EOF
 else
 # let's investigate the bottle...
 cat << EOF
-You have found a potion bottle of swirling
-green liquid. Do you want to drink it?  y/n
+Vous avez trouvé une fiole contenant un liquide vert tourbillonnant.
+Voulez-vous la boire ?  o/n
 
 EOF
 read RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
    cat << EOF
-The taste of a rustic green plant fills your mouth.  It
-warms and strengthens you.
+Le goût d'une plante verte rustique emplit votre bouche.  Il
+vous réchauffe et vous fortifie.
 
-Create a variable for your health points (HP).  You have
-15HP:
+Créez une variable pour vos points de vie (HP).  Vous avez
+15 HP :
 
 export HP=15
 
 EOF
 else
     cat << EOF
-You weren't born yestermorn.  This potion is probably
-poison.
+Vous n'êtes pas né de la dernière pluie. Cette potion est probablement
+du poison.
 
-Create a variable for your health points (HP).  You have
-10HP:
+Crée une variable pour tes points de vie (HP).  Vous avez
+10 HP :
 
 export HP=10
 
@@ -53,7 +53,7 @@ EOF
 fi
 
 cat << EOF
-You can check your health at any time:
+Vous pouvez vérifier votre état de santé à tout moment :
 
 echo \$HP
 
@@ -337,10 +337,10 @@ fi
 
 
 
-# Hmm, that didn't work.
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# Hmm, ça n'a pas marché.
+# N'oubliez pas que lorsque les fichiers se terminent par un *,
+# cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./potion
 

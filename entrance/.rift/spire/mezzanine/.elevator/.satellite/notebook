@@ -1,37 +1,37 @@
-This is the notebook of Thraal, Artificer of the Kingdom of
-Nor.  I have been studying the machines that lie in this
-Satellite.  I have a way to combine the parts to form a
-golem, a *robot*, using the same incantation that I use to
-view signs and scrolls in my home world.  I have discovered
-that in order to bring the robot to life I must utter the
-following spell:
+Ceci est le carnet de notes de Thraal, artisan du royaume de
+Nor.  J'ai étudié les machines qui se trouvent dans ce
+satellite.  J'ai trouvé un moyen de combiner les pièces pour former un
+golem, un *robot*, en utilisant le même sort que celui que j'utilise pour
+voir les signes et les parchemins dans mon monde natal.  J'ai découvert
+que pour donner vie au robot, je dois prononcer le
+sort suivant :
 
     chmod +x robot
 
-I have labeled the four parts alpha, beta, gamma, delta,
-but that is not the order I must combine them.  I must
-pass the combined parts into another spell which I will
-document below.  The first incantation I tried was thus:
+J'ai nommé les quatre pièces alpha, bêta, gamma et delta,
+mais ce n'est pas dans cet ordre que je dois les assembler.  Je dois
+passer les pièces assemblées dans un autre sort que je vais
+documenter ci-dessous.  La première incantation que j'ai essayée était la suivante :
 
-    cat alpha beta gamma delta | base64 -d > robot
+    cat alpha beta gamma delta | base64 -d > robot...
 
-...but that was met with the following error:
+ mais j'ai obtenu l'erreur suivante :
 
-    base64:  invalid input
+    base64 :  entrée non valide
 
-I have noticed that not every order thus will produce
-the same error, but the resulting robot still does not
-work.  I discovered another incantation that will tell
-me the robot is assembled correctly:
+J'ai remarqué que tous les ordres ne produisent pas
+la même erreur, mais le robot résultant ne fonctionne toujours pas.
+  J'ai découvert une autre incantation qui m'indique
+si le robot est correctement assemblé :
 
     sha256sum -c sha256sums
 
-I will attempt every combination and document the one
-that succeeds.
+Je vais essayer toutes les combinaisons et documenter celle
+qui fonctionne.
 
     alpha beta delta gamma
     alpha delta bet
 
-There appears to be dried blood on the notebook, and the
-rest of the pages are blank.
+Il semble y avoir du sang séché sur le cahier, et le
+reste des pages est vierge.
 

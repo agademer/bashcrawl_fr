@@ -1,46 +1,46 @@
 #!/bin/bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors 
+# lisez ce code et voyez si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
-ITEMS=("rags" "fish")
+ITEMS=("haillons" "poisson")
 
 if ! grep --quiet "${ITEMS[0]}" <<< "$I" ; then
     cat << EOF
-There's a pile of old **rags**.  They are old and worn with
-age, and probably fell off of some poor adventurer.
+Il y a un tas de vieux **haillons**.  Ils sont vieux et usés par le
+temps, et appartenait probablement à un pauvre aventurier.
 
 EOF
-    printf "Do you want to take the rags? y/n  "
+    printf "Voulez-vous ramassez les haillons ? o/n  "
 
     read RESP
 
-    if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
+    if [ "$RESP" = "o" -o "$RESP" = "O" ];then
         cat << EOF
-As you take the rags from the floor, you find a salted fish,
-probably from the rations of the former owner of these rags.
-Prefix these items to your inventory:
+En ramassant les haillons sur le sol, vous trouvez un poisson salé,
+probablement issu des rations de l'ancien propriétaire de ces haillons.
+Ajoutez ces objets à votre inventaire :
 
 export I=$(IFS=, ; echo "${ITEMS[*]}"),\$I
 
-Remember, you can check your inventory
+N'oubliez pas que vous pouvez vérifier votre inventaire.
 
 echo \$I
 
 EOF
     fi
 else
-    echo "The rags have already been taken"
+    echo "Les haillons ont déjà été pris."
 fi
 #
 #
@@ -448,4 +448,4 @@ fi
 #
 
 #
-# Well that didn't work!
+# Eh bien, ça n'a pas marché !
