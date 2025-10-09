@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Si vous lisez ceci, c'est que vous avez dépassé les limites
 # et que vous lisez le code qui pilote le jeu.
@@ -12,24 +12,12 @@
 # les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
 # Nous serons ravis de vous donner des indices.
 #
-gameover () {
-    cat << EOF > corpse
-Vous voyez le cadavre d'un aventurier tué sur le sol du
-donjon.  Vous trouvez les objets suivants sur le cadavre :
 
-${I}
+#import global functions from toplevel directory
+FUNCTIONS=$(pwd)
+FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
+. $FUNCTIONS
 
-EOF
-    curr=`basename $PWD`
-    while [ "$curr" != "entrance" ]; do
-        pushd .. &> /dev/null
-        dirs -c
-        curr=`basename $PWD`
-    done
-    unset I
-    unset HP
-    $SHELL
-}
 roll() {
     printf "Entrez un nombre:  "
     read NUM

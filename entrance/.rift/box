@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Si vous lisez ceci, c'est que vous avez dépassé les limites
 # et que vous lisez le code qui pilote le jeu.
@@ -33,7 +33,7 @@ EOF
 
    if [ "$RESP" = "$USER" ]; then
        cat << EOF > armour
-#!/bin/bash
+#!/usr/bin/env bash
 cat << eof
 Bienvenue, ${USER}, dans votre système POSIX.  Vous avez beaucoup appris,
 et vous disposez désormais des connaissances de base nécessaires pour devenir un

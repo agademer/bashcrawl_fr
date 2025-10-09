@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Si vous lisez ceci, c'est que vous avez dépassé les limites
 # et que vous lisez le code qui pilote le jeu.

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Si vous lisez ceci, c'est que vous avez dépassé les limites
 # et que vous lisez le code qui pilote le jeu.
@@ -12,6 +12,12 @@
 # les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
 # Nous serons ravis de vous donner des indices.
 #
+
+#import global functions from toplevel directory
+FUNCTIONS=$(pwd)
+FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
+. $FUNCTIONS
+
 roll() {
     echo "Entrez un nombre."
     read NUM
@@ -45,25 +51,6 @@ roll() {
     resolve
 }
 
-gameover () {
-    cat << EOF > corpse
-Vous voyez le cadavre d'un aventurier tué sur le sol du
-donjon.  Vous trouvez les objets suivants sur le cadavre :
-
-${I}
-
-EOF
-    curr=`basename $PWD`
-    while [ "$curr" != "entrance" ]; do
-        pushd .. &> /dev/null
-        dirs -c
-        curr=`basename $PWD`
-    done
-    unset I
-    unset HP
-    $SHELL
-}
-
 flee () {
     cat << EOF
 Vous essayez de fuir, mais vous vous rendez compte que vous ne le pouvez pas.  Vous passez 1000
@@ -90,7 +77,7 @@ chaos !
 
 EOF
        cat << EOF > treasure
-#!/bin/bash
+#!/usr/bin/env bash
 if ! grep  --quiet --only-matching cheveux <<< \$I; then
     cat << eof
 Vous avez trouvé une mèche de **cheveux** d'un dieu !  Ajoutez-la à votre inventaire.
@@ -103,7 +90,7 @@ fi
 EOF
        chmod +x treasure
        cat << EOF > platinum
-#!/bin/bash
+#!/usr/bin/env bash
 if ! grep  --quiet --only-matching bracelet <<< \$I; then
     cat << eof
 Vous avez trouvé un *bracelet* enchanté de nécromancie chaotique
