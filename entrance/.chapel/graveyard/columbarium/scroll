@@ -1,19 +1,19 @@
-# Before you is the columbarium, a weathered stone structure
-# adorned with carvings of angels and vines. Rows of niches
-# line its walls, some with long burnt-out candles, others
-# with worn inscriptions and small tokens of remembrance.
+# Devant vous se trouve le columbarium, une structure en pierre patinée
+# ornée de sculptures d'anges et de vignes. Des rangées de niches
+# bordent ses murs, certaines avec de longues bougies consumées, d'autres
+# avec des inscriptions effacées et de petits souvenirs.
 #
-# Many have distinctive symbols on their front. Maybe you 
-# can find one that is helpful.
+# Beaucoup ont des symboles distinctifs sur leur façade. Peut-être 
+# en trouverez-vous un qui vous sera utile.
 #
-# If you think you have found the right niche, you can touch
-# it with the following command:
+# Si vous pensez avoir trouvé la bonne niche, vous pouvez la toucher
+# à l'aide de la commande suivante :
 # 
-# touch <number of niche>
+# touch <numéro de la niche>
 #
-# This creates an empty file in the current room (directory).
-# After you have created the file, try to "open" the niche.
+# Cela crée un fichier vide dans la pièce (répertoire) actuelle.
+# Après avoir créé le fichier, essayez d'« ouvrir » la niche.
 #
-# If you know a spell that helps you search, you can make it easier
-# for yourself.
+# Si vous connaissez un sort qui vous aide à chercher, vous pouvez vous faciliter la tâche
+#.
 

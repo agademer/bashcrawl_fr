@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors lisez ce code et voyez
+# si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
 #import global functions from toplevel directory
@@ -19,37 +19,37 @@ FUNCTIONS=${FUNCTIONS%entrance*}entrance/.functions
 . $FUNCTIONS
 
 cat << EOF
-As your hand hovers over the array of chests, you feel an eerie
-pull toward one in particular.
+Alors que votre main plane au-dessus de la rangée de coffres, vous ressentez une étrange
+attirance pour l'un d'entre eux en particulier.
 
 EOF
-printf "What is the number of your choice?  "
+printf "Quel est le numéro de votre choix ?  "
 
 read RESP
 
 if [ "$RESP" -eq "27121981" ]; then
    
     cat << EOF
-As you pry it open, a soft creak reveals its contents. You find a
-trove of ancient **gold coins**, a jewel-encrusted **bracelet**
-with a large emerald, and a set of **silver keys** engraved with 
-mysterious runes. The treasures glimmer with a hint of long-
-forgotten wealth and secrets.
+Lorsque vous l'ouvrez, un léger grincement révèle son contenu. Vous découvrez un
+trésor composé d'anciennes **pièces** d'or, d'un **bracelet** incrusté de pierres précieuses
+et orné d'une grosse émeraude, ainsi que d'un jeu de **clés** en argent gravées de 
+runes mystérieuses. Les trésors scintillent, évoquant des richesses et des secrets depuis longtemps
+oubliés.
 
-Add the Items to your inventory with:
+Ajoutez les objets à votre inventaire avec :
 
-export I=goldcoins,bracelet,silverkeys,\$I,
+export I=pièces,bracelet,clés,\$I,
 
 EOF
 else
     cat << EOF
-Ignoring the subtle warnings, you lift the lid, and in that instant,
-a deep rumble echoes through the chamber. The marble walls crack wider,
-and dust cascades from the ceiling. The room shudders violently, debris
-raining down as the ancient structure begins to collapse around you,
-triggered by an unwise choice.
+Ignorant les avertissements subtils, vous soulevez le couvercle, et à cet instant,
+un grondement profond résonne dans la chambre. Les murs de marbre se fissurent davantage,
+et de la poussière tombe du plafond. La pièce tremble violemment, des débris
+pleuvent alors que l'ancienne structure commence à s'effondrer autour de vous,
+provoquée par un choix imprudent.
 
-You have been slain by the collapsed mausoleum.
+Vous avez été tué par l'effondrement du mausolée.
 
 EOF
     mv ../mausoleum ../.mausoleum

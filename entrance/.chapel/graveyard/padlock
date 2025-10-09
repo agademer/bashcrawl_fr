@@ -1,43 +1,43 @@
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors lisez ce code et voyez
+# si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 #
 
 cat << EOF
-The old padlock features three dials, each adorned with a distinct
-symbol:
-  an amulet
-  a crown
-  a tombstone with the initials F.K. 
+Le vieux cadenas comporte trois cadrans, chacun orné d'un symbole distinct
+:
+  une amulette
+  une couronne
+  une pierre tombale avec les initiales F.K. 
 
-The dials are worn and scratched, their numbers barely visible beneath
-layers of rust and grime. The intricate symbols, though faded, hint at
-the lock's connection to ancient, enigmatic lore.
+Les cadrans sont usés et rayés, leurs chiffres à peine visibles sous
+des couches de rouille et de crasse. Les symboles complexes, bien que fanés, laissent entrevoir
+le lien entre le cadenas et une tradition ancienne et énigmatique.
 
 EOF
-printf "have you found the numbers? y/n  "
+printf "Avez-vous trouvé les chiffres ? o/n  "
 
 read RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "o" -o "$RESP" = "O" ]; then
 
 cat << EOF
 
-The old crumbling mausoleum stands silent and imposing, its weathered
-stone facade adorned with creeping ivy and shattered stained glass
-windows. The heavy, rusted padlock on the large, ornately carved wooden
-door glints faintly in the dim light as you prepare to enter, the ancient
-numbers you've gathered poised to reveal the secrets within.
+Le vieux mausolée en ruine se dresse, silencieux et imposant, sa façade en pierre érodée
+ornée de lierre rampant et de vitraux brisés.
+ Le lourd cadenas rouillé sur la grande porte en bois sculpté
+brille faiblement dans la pénombre alors que vous vous apprêtez à entrer, les anciens
+chiffres que vous avez rassemblés prêts à révéler les secrets qui s'y cachent.
 
 EOF
 
@@ -46,15 +46,15 @@ EOF
        grep  --quiet --only-matching '7432' <<< $I; then
 
         cat << EOF
-As the padlock clatters to the ground, the mausoleum's door creaks open,
-revealing a dimly lit interior cloaked in dust and cobwebs.
+Alors que le cadenas tombe bruyamment sur le sol, la porte du mausolée s'ouvre en grinçant,
+révélant un intérieur faiblement éclairé, recouvert de poussière et de toiles d'araignée.
 
 EOF
         mv .mausoleum mausoleum
     else
         cat << EOF
-One or more Numbers are wrong or missing in your Inventory.
-Remember, you can check your inventory with:
+Un ou plusieurs numéros sont erronés ou manquants dans votre inventaire.
+N'oubliez pas que vous pouvez vérifier votre inventaire à l'aide de :
 
 echo \$I
 
@@ -64,7 +64,7 @@ EOF
 
 else
     cat << EOF
-Continue your search for the numbers on the graveyard.
+Continuez votre recherche des numéros dans le cimetière.
 
 EOF
 
@@ -338,16 +338,16 @@ fi
 
 
 
-# Hmm, that didn't work.
+# Hmm, ça n'a pas marché.
 #
-# Remember, when files end in a *
-# it means they are applications.
-# Try this:
+# N'oubliez pas que lorsque les fichiers se terminent par un *
+# cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./padlock
 #
-# If you're not seeing the * after
-# this file name, you're probably
-# forgetting to use ls -F
+# Si vous ne voyez pas le * après
+# ce nom de fichier, vous avez probablement
+# oublié d'utiliser ls -F
 
 

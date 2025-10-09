@@ -1,13 +1,13 @@
 # 
-# Visitor, heed this sign:
+# Visiteur, prêtez attention à ce panneau :
 # 
-# Within these tombs lies magic old,
-# A spell of aid for your travail.
-# Speak the words, be brave and bold,
-# And guidance shall your path unveil.
+# Dans ces tombes repose une magie ancienne,
+# Un sortilège qui vous aidera dans votre quête.
+# Prononcez les mots, soyez courageux et audacieux,
+# Et votre chemin se dévoilera à vous.
 #
-# grep King royals 
+# grep Roi royals
 #
-# This spell lists only the lines that contain "King"
-# from the file "royals"
+# Ce sortilège ne répertorie que les lignes contenant « Roi »
+# dans le fichier « royals ».
 

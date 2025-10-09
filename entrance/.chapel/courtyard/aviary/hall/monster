@@ -58,7 +58,7 @@ Touché ! Un coup critique !  Vous avez terrassé la bête.
 
 EOF
         cat << EOF > treasure
-#!/bin/bash
+#!/usr/bin/env bash
 if ! grep  --quiet --only-matching couronne <<< \$I; then
     cat << eof
 Vous avez trouvé une **couronne** !  Ajoutez-la à votre inventaire.

@@ -1,16 +1,16 @@
-# As you hastily scan the room, your gaze falls upon a tattered,
-# ancient scroll partially protruding from beneath a crumbled
-# chest. Ignoring the other trinkets, you pull it free, revealing
-# faded runes scratched onto the fragile parchment. Unfurling the
-# scroll, you recognize it as a spell of aid:
+# Alors que vous scrutez rapidement la pièce, votre regard tombe sur un
+# ancien parchemin en lambeaux qui dépasse partiellement d'un coffre
+# effondré. Ignorant les autres babioles, vous le retirez, révélant des
+# runes effacées gravées sur le parchemin fragile. En déroulant le
+# parchemin, vous reconnaissez un sort d'aide :
 # 
-# In decayed rooms where shadows stay,
-# 'uniq' will charm the clones away.
+# Dans les pièces délabrées où les ombres demeurent,
+# « uniq » charmera les clones pour les faire disparaître.
 #
-# You can combine spells (commands) with a pipe (|) character.
-# The "uniq" command omits repeated lines.
-# Sort the room, and then pipe its output
-# to "uniq" for a short list. Try the incantation:
+# Vous pouvez combiner des sorts (commandes) à l'aide du caractère pipe (|).
+# La commande « uniq » omet les lignes répétées.
+# Triez la pièce, puis redirigez sa sortie
+# vers « uniq » pour obtenir une liste concise. Essayez l'incantation :
 #
 # sort room | uniq
 

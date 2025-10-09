@@ -1,45 +1,46 @@
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous lisez le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors lisez ce code et voyez
+# si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, cependant, tenez-vous en aux
+# parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 # 
+# Il s'agit d'une fonction personnalisée.
+# Une fonction est un extrait de code que vous pouvez utiliser dans d'autres fichiers.
+# Chaque fois que vous voyez la commande « gameover » dans un fichier de ce
+# donjon, il s'agit d'un « appel » à cette fonction.
 
-# This is a custom function.
-# A function is a snippet of code that you can use in other files.
-# Whenever you see the `gameover`command in a file of this
-# dungeon, that's a "call" to this function.
 gameover () {
     CORPSE=$(mktemp corpse.XXX)
     cat << EOF2 > $CORPSE
 #!/usr/bin/env bash
 #
-# If you are reading this, you have wandered out of bounds
-# and are reading the code that drives the game.
+# Si vous lisez ceci, c'est que vous avez dépassé les limites
+# et que vous êtes en train de lire le code qui pilote le jeu.
 #
-#                    Congratulations!
+#                    Félicitations !
 #
-# Learning Linux is all about curiosity, so read this code and see
-# if you can figure out what it does.
+# Apprendre Linux, c'est avant tout une question de curiosité, alors lisez ce code et voyez
+# si vous pouvez comprendre ce qu'il fait.
 #
-# When you're ready to continue playing the game, though, stick to
-# the scrolls. If you're stuck, go to Gitlab and create an issue.
-# We're happy to provide hints.
+# Lorsque vous serez prêt à continuer à jouer, concentrez-vous sur
+# les parchemins. Si vous êtes bloqué, rendez-vous sur Gitlab et créez un ticket.
+# Nous serons ravis de vous donner des indices.
 # 
+
 CORPSE=\$(basename \$0)
 
 echo
 if [ ! -e .\$CORPSE.looted ]; then
     cat << EOF
-You see the corpse of a slain adventurer on the floor of the
-dungeon.  You find the following items on the corpse:  
+Vous voyez le cadavre d'un aventurier tué sur le sol du
+donjon.  Vous trouvez les objets suivants sur le cadavre :  
 
 ${I}
 
@@ -47,7 +48,7 @@ EOF
 
     touch .\$CORPSE.looted
 else
-    echo "This corpse has already been looted."
+    echo "Ce cadavre a déjà été pillé."
     echo
 fi
 EOF2
@@ -57,10 +58,10 @@ EOF2
     done
 
     cat << EOF2 >> $CORPSE
-# Hmm, that didn't work.
-# Remember, when files end in a * 
-# it means they are applications.
-# Try this:
+# Hmm, ça n'a pas marché.
+# N'oubliez pas que lorsque les fichiers se terminent par un * 
+#, cela signifie qu'il s'agit d'applications.
+# Essayez ceci :
 #
 # ./$CORPSE
 
