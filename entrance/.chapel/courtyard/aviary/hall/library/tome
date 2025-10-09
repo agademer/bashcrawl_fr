@@ -28,90 +28,90 @@ random_page () {
         0)
             cat << EOF
 
-View the world in color!
+Voyez le monde en couleurs !
 
-If you have a modern, color terminal, you can view the
-output of the ls command in color!  This will still be a
-valid command if you don't have a color terminal, you just
-won't see colors.  Try this:
+Si vous disposez d'un terminal couleur moderne, vous pouvez afficher la
+sortie de la commande ls en couleurs !  Cette commande restera
+valide même si vous ne disposez pas d'un terminal couleur, mais vous
+ne verrez tout simplement pas les couleurs.  Essayez ceci :
 
 alias ls='ls -F --color=auto'
 
-Now when you run the "ls" command by itself, rooms
-(directories), scrolls (text files), and encounters
-(executable files) should each have different colors.
-Depending on the \$LS_COLORS variable, many other files will
-have different colors too!
+Désormais, lorsque vous exécutez la commande `ls` seule, les pièces
+(répertoires), les rouleaux (fichiers texte) et les rencontres
+(fichiers exécutables) devraient chacun avoir des couleurs différentes.
+En fonction de la variable \$LS_COLORS, de nombreux autres fichiers
+auront également des couleurs différentes !
 
-You can read more about colors by consulting the
-"dircolors" manual.  To read more, type this spell:
+Vous pouvez en savoir plus sur les couleurs en consultant le
+manuel « dircolors ».  Pour en savoir plus, tapez cette commande :
 
 man dircolors
 
-In the manual, you can type 'q' (without quotes) to
-exit the manual page.
+Dans le manuel, vous pouvez taper « q » (sans guillemets) pour
+quitter la page du manuel.
 
 EOF
         ;;
         1)
             cat << EOF
 
-Keep track of where you've been!
+Gardez une trace des endroits où vous êtes allé !
 
-Instead of using "cd <room>" and "cd .." to
-navigate the catacombs, you can keep track of the
-rooms you've been in by using "pushd" and "popd".
-"pushd", as the name implies, pushes the directory you
-pass as the argument onto the room (directory) stack.
-Use it like so:
+Au lieu d'utiliser « cd <room> » et « cd .. » pour
+naviguer dans les catacombes, vous pouvez garder une trace des
+pièces dans lesquelles vous êtes allé en utilisant « pushd » et « popd ».
+« pushd », comme son nom l'indique, pousse le répertoire que vous
+passez en argument dans la pile des pièces (répertoires).
+Utilisez-le comme suit :
 
 pushd <room>
 
-The angle brackets mean you specify the room (directory),
-you don't type the angle brackets.  To see your current
-stack, type the following command:
+Les crochets signifient que vous spécifiez la pièce (répertoire),
+vous ne tapez pas les crochets.  Pour voir votre pile actuelle,
+tapez la commande suivante :
 
 dirs
 
-This will print out the list of directories on the stack.
-The data structure is a known as a stack, because you only
-add or remove elements from the top of the stack, it is also
-known as a LIFO (Last In, First Out) data structure.  To
-remove the top room (directory) from the stack, and change
-directory to the new directory on the top of the stack, use
-"popd", like so:
+Cela affichera la liste des répertoires dans la pile.
+La structure de données est appelée pile, car vous ne pouvez
+ajouter ou supprimer des éléments qu'à partir du haut de la pile. Elle est également
+connue sous le nom de structure de données LIFO (Last In, First Out, dernier entré, premier sorti).  Pour
+supprimer la pièce (répertoire) supérieure de la pile et changer
+de répertoire pour le nouveau répertoire en haut de la pile, utilisez
+« popd », comme ceci :
 
 popd
 
-This will remove the top element of the stack ("pop" it off the
-stack), and change directory to the next top of the stack.
+Cela supprimera l'élément supérieur de la pile (le « pop » de la
+pile) et changera le répertoire pour le prochain élément supérieur de la pile.
 
-Here's an example.  You're in a room (directory) called
-~/bashcrawl/entrance/field/, with the following
-other rooms:
+Voici un exemple.  Vous êtes dans une pièce (répertoire) appelée
+~/bashcrawl/entrance/field/, avec les autres pièces suivantes
+:
 
 cemetary/ jail/ oubliette/
 
-To change directory to the cemetary, and place it on the directory
-stack, use this:
+Pour changer de répertoire et aller dans le cimetière, et le placer dans la pile de répertoires,
+ utilisez ceci :
 
 pushd cemetary
 
-Now, the directory stack (output of the "dirs" command),
-shows this:
+Maintenant, la pile de répertoires (résultat de la commande « dirs »)
+affiche ceci :
 
 ~/bashcrawl/entrance/field/cemetary ~/bashcrawl/entrance/field
 
-...and your current directory (present working directory,
-held in the \$PWD variable) is the cemetary.  To go back to
-the field, run "popd".  The directory stack will return to
-~/bashcrawl/entrance/field, and your current directory will
-be that directory.  You can mix and match "pushd" with "cd",
-and only the directories you add with "pushd" will be on the
-stack.  This is useful for returning to another directory,
-after exploring the rest of the dungeon.
+...et votre répertoire actuel (répertoire de travail actuel,
+contenu dans la variable \$PWD) est le cimetière.  Pour revenir au
+champ, exécutez « popd ».  La pile de répertoires reviendra à
+~/bashcrawl/entrance/field, et votre répertoire actuel sera
+ce répertoire.  Vous pouvez combiner « pushd » avec « cd »,
+et seuls les répertoires que vous ajoutez avec « pushd » seront dans la
+pile.  Cela est utile pour revenir à un autre répertoire,
+après avoir exploré le reste du donjon.
 
-Good luck!
+Bonne chance !
 
 EOF
         ;;
@@ -119,21 +119,21 @@ EOF
         [ -f ../monster ] && monster="monster" || monster="carcass"
         cat << EOF
 
-Map the entire dungeon!
+Cartographiez l'ensemble du donjon !
 
-You can see the layout of the entire dungeon using the
-"tree" command.  You may need to install it as a separate
-package, consult your operating system package manager for
-details on how to do this.  If you're reading this from the
-library, your relative current directory path should be:
+Vous pouvez voir la disposition de l'ensemble du donjon à l'aide de la
+commande « tree ».  Vous devrez peut-être l'installer en tant que
+paquet séparé. Consultez le gestionnaire de paquets de votre système d'exploitation pour
+obtenir des détails sur la manière de procéder.  Si vous lisez ceci depuis la
+bibliothèque, votre chemin d'accès relatif au répertoire actuel devrait être :
 
-entrance/chapel/courtyard/aviary/hall/library
+entrance/chapel/cour/aviary/hall/library
 
-If you run the following command, from the library:
+Si vous exécutez la commande suivante depuis la bibliothèque :
 
 tree -F ..
 
-You see this:
+Vous verrez ceci :
 
 ..
 ├── library/
@@ -141,188 +141,188 @@ You see this:
 │   └── tome*
 └── ${monster}*
 
-The "tree" command takes many of the same options as the
-"ls" command, including colors and viewing hidden files.  Go
-back to the entrance and try it out!
+La commande « tree » accepte la plupart des options de la commande
+« ls », y compris les couleurs et l'affichage des fichiers cachés.  Retournez
+à l'entrée et essayez-la !
 
 EOF
         ;;
     3)
         cat << EOF
 
-Use emacs mode to navigate the command prompt (CLI)!
+Utilisez le mode emacs pour naviguer dans l'invite de commande (CLI) !
 
-By default, in Bash, emacs mode is enabled.  If it is not
-enabled you can run this in your shell:
+Par défaut, dans Bash, le mode emacs est activé.  S'il n'est pas
+activé, vous pouvez exécuter cette commande dans votre shell :
 
 set -o emacs
 
-This allows you to move the cursor in the shell faster than
-using the arrow keys alone.  Specific command key
-chords/combinations can be used, like so:
+Cela vous permet de déplacer le curseur dans le shell plus rapidement qu'en
+utilisant uniquement les touches fléchées.  Des combinaisons de touches spécifiques
+peuvent être utilisées, comme suit :
 
-- Ctrl-a:  move cursor to the beginning of the line
-- Ctrl-e:  move cursor to the end of the line
-- Meta-b:  (or Alt-b), move backward one word
-- Meta-f:  (or Alt-f), move forward one word
-- Ctrl-u:  Cut from cursor to beginning of line
-- Ctrl-k:  Cut from cursor to end of line
-- Ctrl-w:  Cut previous word
-- Ctrl-y:  Paste what you just cut with Ctrl-u, Ctrl-k, or
+- Ctrl-a :  déplacer le curseur au début de la ligne
+- Ctrl-e :  déplacer le curseur à la fin de la ligne
+- Meta-b :  (ou Alt-b), reculer d'un mot
+- Meta-f :  (ou Alt-f), avancer d'un mot
+- Ctrl-u :  couper du curseur au début de la ligne
+- Ctrl-k :  couper du curseur à la fin de la ligne
+- Ctrl-w :  couper le mot précédent
+- Ctrl-y :  coller ce que vous venez de couper avec Ctrl-u, Ctrl-k ou
            Ctrl-w
-- Ctrl-_:  Undo last cut (may not work in all terminals)
+- Ctrl-_ :  annuler la dernière coupe (peut ne pas fonctionner dans tous les terminaux)
 
-Now you can navigate the shell like a pro!
+Vous pouvez désormais naviguer dans le shell comme un pro !
 
 EOF
         ;;
     4)
         cat << EOF
 
-Use the tmux terminal multiplexer!
+Utilisez le multiplexeur de terminaux tmux !
 
-tmux is a terminal multiplexer, which allows the user to
-manage sessions, windows, and panes within the terminal.
-The biggest reason to use a terminal multiplexer is that it
-keeps the shells in each of its panes persistent, meaning
-you can detach and reattach to tmux panes, windows, and
-sessions (possibly from another computer altogether),
-without losing your work, or where you were.  You can even
-use tmux to share the terminal with another user (who is
-using a different computer from the one you are using), just
-have them connect to the same session!
+tmux est un multiplexeur de terminaux qui permet à l'utilisateur de
+gérer les sessions, les fenêtres et les panneaux au sein du terminal.
+La principale raison d'utiliser un multiplexeur de terminal est qu'il
+maintient les shells dans chacun de ses volets, ce qui signifie que
+vous pouvez vous détacher et vous rattacher aux volets, fenêtres et
+sessions tmux (éventuellement à partir d'un autre ordinateur),
+sans perdre votre travail ni l'endroit où vous en étiez.  Vous pouvez même
+utiliser tmux pour partager le terminal avec un autre utilisateur (qui
+utilise un ordinateur différent du vôtre), il suffit de
+lui demander de se connecter à la même session !
 
-tmux is a separate package, and may not be installed by
-default.  Consult your operating system package manager
-manual for details on installing tmux.
+tmux est un paquet séparé et peut ne pas être installé par
+défaut.  Consultez le manuel du gestionnaire de paquets de votre système d'exploitation
+pour plus de détails sur l'installation de tmux.
 
-You can launch tmux using the following command:
+Vous pouvez lancer tmux à l'aide de la commande suivante :
 
 tmux new-session -s <session_name>
 
-Where <session_name> can be replaced by the arbitrary name
-you want to give the session.  If you don't want to name the
-session, you can leave off "-s <session_name>".
+Où <session_name> peut être remplacé par le nom arbitraire
+que vous souhaitez donner à la session.  Si vous ne souhaitez pas nommer la
+session, vous pouvez omettre « -s <session_name> ».
 
-By default, tmux will create the new session with one
-window, and that window will have but one pane.  Each pane
-created by tmux is a pseudo terminal, running its own
-independent shell.  There will be a status bar at the bottom
-of the tmux pane, with the session name (if any) and
-numbered windows.
+Par défaut, tmux créera la nouvelle session avec une seule
+fenêtre, et cette fenêtre n'aura qu'un seul volet.  Chaque volet
+créé par tmux est un pseudo-terminal, exécutant son propre
+shell indépendant.  Une barre d'état apparaîtra en bas
+du volet tmux, avec le nom de la session (le cas échéant) et
+les fenêtres numérotées.
 
-To interact with tmux inside of a tmux pane, you pass the
-prefix key, which is Ctrl-b by default.  You can then hit
-another key to have tmux do something useful.  One such
-useful thing is to split the tmux pane vertically, with a
-horizontal line separating your old pane and the freshly
-launched new pane on the bottom.  To do this, type the
-following:
+Pour interagir avec tmux à l'intérieur d'un panneau tmux, vous devez passer la
+touche préfixe, qui est Ctrl-b par défaut.  Vous pouvez ensuite appuyer sur
+une autre touche pour que tmux effectue une action utile.  Une de ces
+actions utiles consiste à diviser le panneau tmux verticalement, avec une
+ligne horizontale séparant votre ancien panneau et le nouveau panneau
+lancé en bas.  Pour ce faire, tapez la
+commande suivante :
 
-Ctrl-b, then %
+Ctrl-b, puis %
 
-Instead of %, you can type " to split the pane horizontally,
-with a vertical line separating the two panes.  You can type
-:, to enter the tmux shell, and issue arbitrary tmux
-commands that way.  See the tmux manual for details:
+Au lieu de %, vous pouvez taper « » pour diviser le volet horizontalement,
+avec une ligne verticale séparant les deux volets.  Vous pouvez taper
+: pour entrer dans le shell tmux et exécuter des commandes tmux
+arbitraires de cette manière.  Consultez le manuel tmux pour plus de détails :
 
 man tmux
 
-To detach from the tmux session, you can issue the following
-keystrokes:
+Pour vous déconnecter de la session tmux, vous pouvez appuyer sur les touches suivantes
+:
 
-Ctrl-b, then d
+Ctrl-b, puis d...
 
-...for "Detach".  Then, later on, possibly from a different computer
-altogether (connecting to the computer running tmux over SSH
-or some other remote shell program), you can attach to the
-tmux session with the following command:
+ pour « Détacher ».  Ensuite, plus tard, éventuellement à partir d'un autre ordinateur
+(en vous connectant à l'ordinateur exécutant tmux via SSH
+ou un autre programme shell distant), vous pouvez vous connecter à la
+session tmux à l'aide de la commande suivante :
 
 tmux attach -t <session_name>
 
-tmux has a complete configuration language, which is by
-default stored in ~/.tmux.conf.  You can set up arbitrary
-keystrokes in the configuration file, to make tmux behave
-however you want.  The limit is your imagination!
+tmux dispose d'un langage de configuration complet, qui est par
+défaut stocké dans ~/.tmux.conf.  Vous pouvez configurer des combinaisons de touches arbitraires
+dans le fichier de configuration, afin que tmux se comporte
+comme vous le souhaitez.  La seule limite est votre imagination !
 
 EOF
         ;;
     5)
         cat << EOF
 
-Learn simple brace expansion and for loops!
+Apprenez l'expansion simple des accolades et les boucles « for » !
 
-Let's say you have several files, named like so:
+Supposons que vous ayez plusieurs fichiers, nommés comme suit :
 
 file00
 file01
 file02
-file03
-...
+file03...
+
 file97
 file98
 file99
 
-You can loop through them, and perform any operation on
-them.  For instance, let's assume you want to compress each
-file individually, without adding them to a single, large
-tar (or ZIP) archive.   Instead of laboriously running the
-commands 100 times for 100 files, you can use a for loop,
-and operate on each file individually.
+Vous pouvez les parcourir en boucle et effectuer n'importe quelle opération sur
+eux.  Par exemple, supposons que vous souhaitiez compresser chaque
+fichier individuellement, sans les ajouter à une seule grande
+archive tar (ou ZIP).   Au lieu d'exécuter laborieusement les
+commandes 100 fois pour 100 fichiers, vous pouvez utiliser une boucle for
+et opérer sur chaque fichier individuellement.
 
-One way to achieve this is through a simple brace expansion.
-In Bash, insted of writing the following (which is very
-labor intensive):
+Une façon d'y parvenir consiste à utiliser une simple expansion d'accolades.
+Dans Bash, au lieu d'écrire ce qui suit (ce qui est très
+laborieux) :
 
 gzip file00
 gzip file01
 gzip file02
-gzip file03
-...
+gzip file03...
+
 gzip file97
 gzip file98
 gzip file99
 
-You can achieve the same results by typing the following
-brace expansion:
-
+Vous pouvez obtenir le même résultat en tapant l'expansion de crochets suivante :
 gzip file{00..99}
 
-You can also put this into a for loop, like so:
+Vous pouvez également l'intégrer dans une boucle « for », comme ceci :
 
 for i in {00..99}; do
     gzip file\${i}
 done
 
-Yet another loop (that doesn't use a brace expansion) could
-be:
+Une autre boucle (qui n'utilise pas d'expansion de crochets) pourrait être :
+
+Une autre boucle (qui n'utilise pas d'expansion d'accolades) pourrait
+être :
 
 for file in file*; do
     gzip \${file}
 done
 
-All of the above commands achieve the same result, each file
-will be compressed with gzip individually.
+Toutes les commandes ci-dessus donnent le même résultat, chaque fichier
+sera compressé individuellement avec gzip.
 
 EOF
         ;;
     6)
-        echo "# A rather plain book with no text of interest." > book
+        echo "# Un livre plutôt banal, sans texte intéressant." > book
         cat << EOF
 
-Duplicate an object!
+Dupliquez un objet !
 
-Use the "cp" command to make a copy of a file.
-For example, this command makes an exact copy of "file1"
-and saves it as "file2":
+Utilisez la commande « cp » pour créer une copie d'un fichier.
+Par exemple, cette commande crée une copie exacte du fichier « file1 »
+et l'enregistre sous le nom « file2 » :
 
 cp file1 file2
 
-To copy an entire directory, use "cp -r":
+Pour copier un répertoire entier, utilisez « cp -r » :
 
 cp -r dir1 dir2
 
-Test the command by duplicating one of the books in this library.
+Testez la commande en dupliquant l'un des livres de cette bibliothèque.
 
 EOF
         ;;
@@ -332,26 +332,26 @@ EOF
 
 cat << EOF
 
-You see a large tome on the table, open
-to a page in the middle of the book.
+Vous voyez un gros livre sur la table, ouvert
+à une page au milieu du livre.
 
 EOF
 
-printf "Do you read it? y/n  "
+printf "Vous le lisez ? o/n  "
 read RESP
 
-if [ "${RESP}" = "y" -o "${RESP}" = "Y" ]; then
+if [ "${RESP}" = "o" -o "${RESP}" = "O" ]; then
     cat << EOF
 
-The tome appears to be a book of spells.  Here is the
-first spell:
+Le livre semble être un grimoire.  Voici le
+premier sort :
 
 EOF
 
-    while [ "${RESP}" = 'y' -o "${RESP}" = 'Y' ]; do
+    while [ "${RESP}" = 'o' -o "${RESP}" = 'O' ]; do
         random_page
 
-        printf "Do you want to read another spell? y/n  "
+        printf "Voulez-vous lire un autre sort ? o/n  "
         read RESP
     done
 fi

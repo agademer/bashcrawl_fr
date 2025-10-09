@@ -37,6 +37,9 @@ pièce adjacente :
 
 ln -fs ../../../chapel/courtyard/aviary/hall portal
 
+(Copiez-coller la ligne, c'est normal que ce soit un peu de la magie noire...)
+Tapez `man ln` si vous voulez en savoir plus.
+
 EOF
     else
         cat << EOF
